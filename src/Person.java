@@ -1,14 +1,22 @@
 
 public class Person {
-    private final String[] name;
-    private  String gender;
-    private  String[] address;
+    private final Name name;
+    private  Address address;
+    private Gender gender;
 
 
-    public Person(String[] name, String lastName, String gender, String[] address) {
-        this.name = name;
+    public Person(String firstName, String lastName, Gender gender, String[] address) {
+        this.name = new Name(firstName,lastName);
         this.gender = gender;
-        this.address = address;
+        this.address = new Address(address);
     }
 
+    public String getName() {
+        return name.getFirstlastName();
+    }
+
+    @Override
+    public String toString() {
+        return gender.title() + " "+ getName() +" "+ address.getCountry();
+    }
 }
