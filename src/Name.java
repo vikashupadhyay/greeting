@@ -13,6 +13,6 @@ public class Name {
     }
 
     public String getLastFirstName() {
-        return lastName+" "+ firstName;
+        return lastName+","+ firstName;
     }
 }

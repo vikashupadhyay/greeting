@@ -5,8 +5,7 @@ public class AddressTest {
 
     @Test
     public void testGiveCountry() throws Exception {
-        String[] a = {"bangalore","India"};
-        Address address = new Address(a);
+        Address address = new Address("bangalore","bangalore","India");
         Assert.assertEquals(address.getCountry(),"India");
 
     }

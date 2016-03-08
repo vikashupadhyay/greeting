@@ -1,0 +1,52 @@
+Build a library that can print labels invitation card
+
+given formats===>
+    firstName,lastName,gender,age,city,state,country
+
+Output should be like
+    Mr/Ms firstname lastname
+        or
+    Mr/Ms lastname firstname
+Rules==>
+    Prifix=>
+        For male prifx should be Mr
+        and for female prifx should be Ms.
+--------------------------------------------------------------------------
+usages-->
+
+   $ java  LabelPrinter -fl  [record.txt]
+   $ java  LabelPrinter -lf   [record.txt]
+   $ java  LabelPrinter -flc  <countryName>   [record.txt]
+   $ java  LabelPrinter -lfc  <countryName>   [record.txt]
+   $ java  LabelPrinter -lfca <countryName> <age>   [record.txt]
+   $ java  LabelPrinter -flca <countryName> <age>   [record.txt]
+--------------------------------------------------------------------------------
+Design==>
+    LabelPrinter-->
+        Readfile
+        splited data and get each data.
+         Make format using library -->
+            Name(using name)
+            Gender(using Gender)
+            Address(Address)
+        Pass this data to Person and person will give output
+    Library-->
+        FileScanner-->a.file
+                      b.size(which is to read)
+        Person--> a. Name
+                  b.Gender
+                  c.Address
+        Name--->a. firstname
+                b. lastname
+        Gender-->
+            Gender will enum which will set prifix for person
+        Age--> age.
+
+        Address-->
+            Address is a bunch of data.
+            a. City
+            b. State
+            c. Country
+
+
+

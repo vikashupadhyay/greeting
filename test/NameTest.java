@@ -12,7 +12,7 @@ public class NameTest {
     @Test
     public void testGetLastFirstName() throws Exception {
         Name name = new Name("John", "Doe");
-        Assert.assertEquals(name.getLastFirstName(),"Doe John");
+        Assert.assertEquals(name.getLastFirstName(),"Doe,John");
 
     }
 }

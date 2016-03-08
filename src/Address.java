@@ -1,11 +1,15 @@
 public class Address {
-    String[] address;
+    private final String city;
+    private final String state;
+    private final String country;
 
-    public Address(String[] address) {
-        this.address = address;
+    public Address(String city,String state,String country) {
+        this.city = city;
+        this.state = state;
+        this.country = country;
     }
 
     public String getCountry() {
-        return address[address.length-1];
+        return country;
     }
 }
