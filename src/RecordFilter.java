@@ -1,36 +1,36 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class GetData {
+public class RecordFilter {
     private final List<Person> persons;
 
 
-    public GetData(List<Person> persons) {
+    public RecordFilter(List<Person> persons) {
         this.persons = persons;
     }
 
     public Object[] getPersonsInFlPattern() {
         ArrayList<String> firstLast = new ArrayList<String>();
-        for (Person person : persons) firstLast.add(person.FL_templete());
+        for (Person person : persons) firstLast.add(person.firstLastFormat());
         return  firstLast.toArray();
     }
     public Object[] getPersonsInLfPattern() {
         ArrayList<String> lastFirst = new ArrayList<String>();
-        for (Person person : persons) lastFirst.add(person.LF_templete());
+        for (Person person : persons) lastFirst.add(person.lastFirstFormat());
         return lastFirst.toArray();
     }
     public Object[] getPersonsInFlPatternOfGivenCountry(String country) {
         ArrayList<String> strings = new ArrayList<String>();
         for (Person person : persons)
             if (person.getAddress().getCountry().equals(country))
-                strings.add(person.FL_templete());
+                strings.add(person.firstLastFormat());
         return strings.toArray();
     }
     public Object[] getPersonsInLfPatternOfGivenCountry(String country) {
         ArrayList<String> strings = new ArrayList<String>();
         for (Person person : persons)
             if (person.getAddress().getCountry().equals(country))
-                strings.add(person.LF_templete());
+                strings.add(person.lastFirstFormat());
         return strings.toArray();
     }
     public Object[] getPersonsInFlPatternOfGivenCountryAndAge(String country, String age) {
@@ -38,7 +38,7 @@ public class GetData {
         int i = 0;
         while (i < persons.size()) {
             if(persons.get(i).getAddress().getCountry().equals(country) && (persons.get(i).getAge().getAge())>=Integer.parseInt(age)) {
-                strings.add(persons.get(i).FL_templete() + "," + persons.get(i).getAge().getAge());
+                strings.add(persons.get(i).firstLastFormat() + "," + persons.get(i).getAge().getAge());
             }
             i++;
         }
@@ -49,7 +49,7 @@ public class GetData {
         int i = 0;
         while (i < persons.size()) {
             if(persons.get(i).getAddress().getCountry().equals(country) && (persons.get(i).getAge().getAge())>=Integer.parseInt(age)) {
-                strings.add(persons.get(i).LF_templete() + "," + persons.get(i).getAge().getAge());
+                strings.add(persons.get(i).lastFirstFormat() + "," + persons.get(i).getAge().getAge());
             }
             i++;
         }

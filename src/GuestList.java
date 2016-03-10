@@ -1,23 +1,23 @@
 import java.util.LinkedList;
 import java.util.List;
 
-public class AddingDataToPerson {
-    private final String data;
+public class GuestList {
+    private final String record;
 
-    public List<Person> getPersons() {
-        return persons;
+    public List<Person> getPreson() {
+        return person;
     }
 
-    private  List<Person> persons = new LinkedList<Person>();
+    private  List<Person> person = new LinkedList<Person>();
 
-    public AddingDataToPerson(String data) {
+    public GuestList(String record) {
 
-        this.data = data;
-        this.persons = getPersons();
+        this.record = record;
+        this.person = getPreson();
     }
 
     public void addData() {
-        String[] indivisualData = data.split("\n");
+        String[] indivisualData = record.split("\n");
         for (String anIndivisualData : indivisualData) {
             String[] s = anIndivisualData.split(",");
             Name name = new Name(s[0], s[1]);
@@ -29,7 +29,7 @@ public class AddingDataToPerson {
             else
                 gender = Gender.Female;
             Person person = new Person(name, gender,age, address);
-            persons.add(person);
+            this.person.add(person);
 
         }
     }
