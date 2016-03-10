@@ -1,15 +1,15 @@
 public class Address {
-    private final String city;
-    private final String state;
-    private final String country;
+    private final City city;
+    private final State state;
+    private final Country country;
 
-    public Address(String city,String state,String country) {
+    public Address(City city,State state,Country country) {
         this.city = city;
         this.state = state;
         this.country = country;
     }
 
-    public String getCountry() {
-        return country;
+    public boolean isOfCountry(Country otherCountry) {
+        return country.equals(otherCountry);
     }
 }

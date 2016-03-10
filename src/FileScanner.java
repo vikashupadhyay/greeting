@@ -4,14 +4,16 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class FileScanner {
-    private final File file;
-    private final int size;
 
-    public FileScanner(File file,int size) {
-        this.file = file;
-        this.size =size;
+    private String[] args;
+
+    public FileScanner(String[] args) {
+
+        this.args = args;
     }
     public String readFile() {
+        File file = new File(args[args.length - 1]);
+        int size = (int) file.length();
         char[] cbuf = new char[size];
         FileReader fileReader = null;
         try {
@@ -24,7 +26,7 @@ public class FileScanner {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        String chunk = new String(cbuf);
-        return chunk;
+        String records = new String(cbuf);
+        return records;
     }
 }

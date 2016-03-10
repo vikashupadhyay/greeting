@@ -1,19 +1,14 @@
 public  enum Gender {
-    Male {
-        @Override
-        public String title() {
-            return "Mr";
-        }
-    },
-    Female() {
-        @Override
-        public String title() {
-            return "Ms";
-        }
-    };
+    Male("Mr"),Female("Ms");
+    private final String honour;
 
-    public  String title(){
-        return "";
-    };
+    @Override
+    public String toString() {
+        return honour;
+    }
+
+    Gender(String honour) {
+        this.honour = honour;
+    }
 }
 

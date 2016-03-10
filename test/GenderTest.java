@@ -7,8 +7,8 @@ public class GenderTest {
     public void testTitleForName() throws Exception {
         Gender male = Gender.Male;
         Gender female = Gender.Female;
-        Assert.assertEquals(male.title(),"Mr");
-        Assert.assertEquals(female.title(),"Ms");
+        Assert.assertEquals(male.toString(),"Mr");
+        Assert.assertEquals(female.toString(),"Ms");
 
     }
 }

@@ -2,35 +2,29 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class GuestList {
-    private final String record;
 
-    public List<Person> getPreson() {
-        return person;
-    }
+    private  List<Person> guestList = new LinkedList<Person>();
 
-    private  List<Person> person = new LinkedList<Person>();
 
-    public GuestList(String record) {
-
-        this.record = record;
-        this.person = getPreson();
-    }
-
-    public void addData() {
-        String[] indivisualData = record.split("\n");
-        for (String anIndivisualData : indivisualData) {
-            String[] s = anIndivisualData.split(",");
-            Name name = new Name(s[0], s[1]);
-            Address address = new Address(s[4], s[5], s[6]);
-            Age age = new Age(s[3]);
-            Gender gender;
-            if (s[2].equals("Male"))
-                gender = Gender.Male;
-            else
-                gender = Gender.Female;
+    public void addRecords(String record) {
+        String[] individualRecords = record.split("\n");
+        for (String each : individualRecords) {
+            String[] splitedRecord = each.split(",");
+            Name name = new Name(splitedRecord[0], splitedRecord[1]);
+            Country country = new Country(splitedRecord[6]);
+            State state = new State(splitedRecord[5]);
+            City city = new City(splitedRecord[4]);
+            Address address = new Address(city,state,country);
+            Age age = new Age(Integer.parseInt(splitedRecord[3]));
+            Gender gender = Gender.valueOf(splitedRecord[2]);
             Person person = new Person(name, gender,age, address);
-            this.person.add(person);
+            this.guestList.add(person);
 
         }
+
+    }
+    public RecordFilter filterRecord(){
+        RecordFilter recordFilter = new RecordFilter(guestList);
+        return recordFilter;
     }
 }

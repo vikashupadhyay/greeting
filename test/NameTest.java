@@ -1,18 +1,19 @@
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class NameTest {
 
     @Test
-    public void testGetFirstLastName() throws Exception {
+    public void testgetFirstlastNameRepresentsFormally() throws Exception {
         Name name = new Name("John", "Doe");
-        Assert.assertEquals(name.getFirstlastName(),"John Doe");
+        assertEquals(name.getFirstlastName(),"John Doe");
 
     }
     @Test
-    public void testGetLastFirstName() throws Exception {
+    public void testgetLastFirstNameRepresentsInformally() throws Exception {
         Name name = new Name("John", "Doe");
-        Assert.assertEquals(name.getLastFirstName(),"Doe,John");
+        assertEquals(name.getLastFirstName(),"Doe,John");
 
     }
 }

@@ -1,4 +1,4 @@
-Build a library that can print labels invitation card
+Build a library that can print labels invitation card.
 
 given formats===>
     firstName,lastName,gender,age,city,state,country
