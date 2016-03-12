@@ -1,5 +1,6 @@
 import org.junit.Before;
 import org.junit.Test;
+import personInfo.*;
 
 import static org.junit.Assert.assertEquals;
 
@@ -30,7 +31,8 @@ public class PersonTest {
     public void testPersonGiveNameInformally() throws Exception {
         Name name = new Name("Melody","Dooley");
         Age age = new Age(20);
-        Person person = new Person(name,Gender.Male,age,address);
+        Person person = new Person(name, Gender.Male,age,address);
         assertEquals("Mr Dooley,Melody",person.lastFirstFormat());
     }
+
 }

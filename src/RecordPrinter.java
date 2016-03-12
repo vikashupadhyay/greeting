@@ -6,8 +6,9 @@ public class RecordPrinter {
         this.data =personsData;
     }
     public void print(){
-        for (int i = 0; i <data.length ; i++) {
-            System.out.println(data[i]);
+        System.out.println(data);
+        for (Object eachRecord : data) {
+            System.out.println(eachRecord);
         }
     }
 }

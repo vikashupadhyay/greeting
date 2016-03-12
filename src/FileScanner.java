@@ -26,7 +26,6 @@ public class FileScanner {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        String records = new String(cbuf);
-        return records;
+        return new String(cbuf);
     }
 }

@@ -1,3 +1,7 @@
+import personInfo.Age;
+import personInfo.Country;
+import personInfo.Person;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,40 +26,31 @@ public class RecordFilter {
     public Object[] getfirstNameFirstOfGivenCountry(Country country) {
         ArrayList<String> strings = new ArrayList<String>();
         for (Person person : persons)
-            if (person.getAddress().isOfCountry(country))
-                strings.add(person.firstLastFormat()+","+country.getCountry());
+            if (person.isSameCountry(country))
+                strings.add(person.firstLastFormat()+","+country);
         return strings.toArray();
     }
     public Object[] getLastNameFirstOfGivenCountry(Country country) {
         ArrayList<String> strings = new ArrayList<String>();
         for (Person person : persons)
-            if (person.getAddress().isOfCountry(country))
-                strings.add(person.lastFirstFormat()+","+country.getCountry());
+            if (person.isSameCountry(country))
+                strings.add(person.lastFirstFormat()+","+country);
         return strings.toArray();
     }
-    public Object[] getFirstNameFirstGivenCountryAndAge(Country country, String age) {
+    public Object[] getFirstNameFirstGivenCountryAndAge(Country country, Age age) {
         ArrayList<String> strings = new ArrayList<String>();
-        int i = 0;
-        while (i < persons.size()) {
-            if(persons.get(i).getAddress().isOfCountry(country) && (persons.get(i).getAge().getAge())>=Integer.parseInt(age)) {
-                strings.add(persons.get(i).firstLastFormat() + ","+country.getCountry()+"," + persons.get(i).getAge().getAge());
-            }
-            i++;
-        }
+        for (Person person : persons)
+            if (person.isSameCountry(country) && person.isSameAge(age))
+                strings.add(person.firstLastFormat() + ","+country+"," + age.getAge());
         return strings.toArray();
     }
-    public Object[] getLastNameFirstOfGivenCountryAndAge(Country country, int age) {
+    public Object[] getLastNameFirstOfGivenCountryAndAge(Country country, Age age) {
         ArrayList<String> strings = new ArrayList<String>();
-        int i = 0;
-        while (i < persons.size()) {
-            persons.get(i).getAddress().isOfCountry(country);
-            System.out.println(persons.get(i).getAddress().isOfCountry(country));
-            if(persons.get(i).getAddress().isOfCountry(country) && (persons.get(i).getAge().getAge())>=age) {
-                strings.add(persons.get(i).lastFirstFormat() + ","+country.getCountry()+"," + persons.get(i).getAge().getAge());
-            }
-            i++;
-        }
+        for (Person person : persons)
+            if (person.isSameCountry(country) && person.isSameAge(age))
+                strings.add(person.lastFirstFormat() + ","+country+"," + age.getAge());
         return strings.toArray();
     }
+
 
 }

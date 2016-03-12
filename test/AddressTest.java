@@ -1,4 +1,8 @@
 import org.junit.Test;
+import personInfo.Address;
+import personInfo.City;
+import personInfo.Country;
+import personInfo.State;
 
 import static org.junit.Assert.assertTrue;
 

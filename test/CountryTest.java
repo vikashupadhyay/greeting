@@ -1,5 +1,6 @@
 import org.junit.Assert;
 import org.junit.Test;
+import personInfo.Country;
 
 import static org.junit.Assert.assertFalse;
 

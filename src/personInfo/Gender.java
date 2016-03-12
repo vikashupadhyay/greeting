@@ -1,3 +1,5 @@
+package personInfo;
+
 public  enum Gender {
     Male("Mr"),Female("Ms");
     private final String honour;

@@ -1,5 +1,6 @@
 import org.junit.Before;
 import org.junit.Test;
+import personInfo.*;
 
 import java.util.LinkedList;
 
@@ -62,7 +63,7 @@ public class RecordFilterTest {
     public void testGetPersonsInFlPatternOfGivenCountryAndAge() throws Exception {
         RecordFilter getData = new RecordFilter(persons);
         Country country = new Country("Bangladesh");
-        assertEquals(getData.getFirstNameFirstGivenCountryAndAge(country, "20")[0], "Mr Melody Dooley,Bangladesh,20");
+        assertEquals(getData.getFirstNameFirstGivenCountryAndAge(country, age)[0], "Mr Melody Dooley,Bangladesh,20");
 
     }
 
@@ -70,7 +71,7 @@ public class RecordFilterTest {
     public void testGetPersonsInLfPatternOfGivenCountryAndAge() throws Exception {
         RecordFilter getData = new RecordFilter(persons);
         Country country = new Country("Bangladesh");
-        assertEquals(getData.getLastNameFirstOfGivenCountryAndAge(country, 20)[0], "Mr Dooley,Melody,Bangladesh,20");
+        assertEquals(getData.getLastNameFirstOfGivenCountryAndAge(country, age)[0], "Mr Dooley,Melody,Bangladesh,20");
 
     }
 }

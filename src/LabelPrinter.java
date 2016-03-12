@@ -7,8 +7,7 @@ public class LabelPrinter {
         GuestList guestList = new GuestList();
         guestList.addRecords(record);
         RecordFilter recordFilter = guestList.filterRecord();
-        RecordPrinter recordPrinter = new RecordPrinter(recordFilter.getfirstNameFirst());
-        recordPrinter.print();
+        String option=args[0];
 
     }
 

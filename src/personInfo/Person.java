@@ -1,3 +1,4 @@
+package personInfo;
 
 public class Person {
     private final Name name;
@@ -6,14 +7,9 @@ public class Person {
     private Gender gender;
 
 
-    public Address getAddress() {
-        return address;
+    public String getAddress() {
+        return address.toString();
     }
-
-    public Age getAge() {
-        return age;
-    }
-
 
     public Person(Name name, Gender gender, Age age, Address address) {
         this.name = name;
@@ -22,7 +18,7 @@ public class Person {
         this.address = address;
     }
 
-    public String getName() {
+    private String getName() {
         return name.getFirstlastName();
     }
 
@@ -32,5 +28,15 @@ public class Person {
 
     public String lastFirstFormat() {
         return gender.toString() + " " + name.getLastFirstName();
+
     }
+
+    public boolean isSameCountry(Country otherCountry) {
+        return address.isOfCountry(otherCountry);
+    }
+
+    public boolean isSameAge(Age otherAge) {
+        return age.isGreaterThanAreEquals(otherAge);
+    }
+
 }
