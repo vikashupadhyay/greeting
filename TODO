@@ -20,6 +20,7 @@ usages-->
    $ java  LabelPrinter -lfc  <countryName>   [record.txt]
    $ java  LabelPrinter -lfca <countryName> <age>   [record.txt]
    $ java  LabelPrinter -flca <countryName> <age>   [record.txt]
+
 --------------------------------------------------------------------------------
 Design==>
     LabelPrinter-->
@@ -48,6 +49,8 @@ Design==>
             b. personInfo.State->state
             c. personInfo.Country->country
 
+$java LabelPrinter -flb [record.txt]
+
 Printing Format-->
     +----------------------+
     | Mr John Smith        |
@@ -55,4 +58,13 @@ Printing Format-->
     | New Delhi, Karnataka |
     | India                |
     +----------------------+
+
+$java LabelPrinter -lfb [record.txt]
+
+     +----------------------+
+     | Mr Smith,John        |
+     |----------------------|
+     | New Delhi, Karnataka |
+     | India                |
+     +----------------------+
 

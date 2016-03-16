@@ -16,14 +16,14 @@ public class PrintingTemplateTest {
     }
     @Test
     public void testToPrintInExpectedFormatOfInformalRecords() throws Exception {
-        String text = "Ms Ram LaL\nNew Delhi, Karnatka\nIndia";
+        String text = "Ms LaLVermaKumaranSharma vikas\nNew Delhi, Karnatka\nIndia";
         PrintingTemplate printingTemplate = new PrintingTemplate(text);
-        String expected ="+---------------------+"+"\n"+
-                         "| Ms Ram LaL          |"+"\n"+
-                         "|---------------------|"+"\n"+
-                         "| New Delhi, Karnatka |"+"\n"+
-                         "| India               |"+"\n"+
-                         "+---------------------+";
+        String expected ="+--------------------------------+"+"\n"+
+                         "| Ms LaLVermaKumaranSharma vikas |"+"\n"+
+                         "|--------------------------------|"+"\n"+
+                         "| New Delhi, Karnatka            |"+"\n"+
+                         "| India                          |"+"\n"+
+                         "+--------------------------------+";
         Assert.assertEquals(expected,printingTemplate.format());
     }
 }

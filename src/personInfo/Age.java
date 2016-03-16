@@ -13,9 +13,9 @@ public class Age {
 
     public boolean isGreaterThanAreEquals(Object o) {
         if (this == o) return true;
-        Age age1 = (Age) o;
+        Age otherAge = (Age) o;
 
-        return age == age1.age;
+        return age >= otherAge.age;
 
     }
 

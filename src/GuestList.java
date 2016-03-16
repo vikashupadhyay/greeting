@@ -27,5 +27,6 @@ public class GuestList {
     }
     public RecordFilter filterRecord(){
         return new RecordFilter(guestList);
+
     }
 }

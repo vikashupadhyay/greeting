@@ -7,7 +7,11 @@ public class LabelPrinter {
         GuestList guestList = new GuestList();
         guestList.addRecords(record);
         RecordFilter recordFilter = guestList.filterRecord();
-        String option=args[0];
+        FilterCommands filterCommands = new FilterCommands(args);
+        filterCommands.recordAccToOption(recordFilter);
+        Object[] toPrint = filterCommands.recordsToPrint();
+        RecordPrinter recordPrinter = new RecordPrinter(toPrint);
+        recordPrinter.printWithBorder();
 
     }
 

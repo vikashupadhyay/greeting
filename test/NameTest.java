@@ -8,7 +8,7 @@ public class NameTest {
     @Test
     public void testgetFirstlastNameRepresentsFormally() throws Exception {
         Name name = new Name("John", "Doe");
-        assertEquals(name.getFirstlastName(),"John Doe");
+        assertEquals(name.getFirstLastName(),"John Doe");
 
     }
     @Test

@@ -6,9 +6,14 @@ public class RecordPrinter {
         this.data =personsData;
     }
     public void print(){
-        System.out.println(data);
         for (Object eachRecord : data) {
             System.out.println(eachRecord);
+        }
+    }
+    public void printWithBorder(){
+        for (Object eachRecord : data) {
+            PrintingTemplate printingTemplate = new PrintingTemplate((String) eachRecord);
+            System.out.println(printingTemplate.format());
         }
     }
 }

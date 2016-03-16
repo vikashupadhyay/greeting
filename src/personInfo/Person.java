@@ -7,7 +7,7 @@ public class Person {
     private Gender gender;
 
 
-    public String getAddress() {
+    public String residence() {
         return address.toString();
     }
 
@@ -18,25 +18,26 @@ public class Person {
         this.address = address;
     }
 
-    private String getName() {
-        return name.getFirstlastName();
-    }
 
     public String firstLastFormat() {
-        return gender.toString() + " " + getName();
+        return String.format("%s %s",gender, name.getFirstLastName());
     }
 
     public String lastFirstFormat() {
-        return gender.toString() + " " + name.getLastFirstName();
+        return String.format("%s %s", gender, name.getLastFirstName());
 
     }
 
-    public boolean isSameCountry(Country otherCountry) {
-        return address.isOfCountry(otherCountry);
+    public boolean isOfCountry(Country otherCountry) {
+        return address.isNationality(otherCountry);
     }
 
-    public boolean isSameAge(Age otherAge) {
+    public boolean isOlderThan(Age otherAge) {
         return age.isGreaterThanAreEquals(otherAge);
+
+    }
+    public int age(){
+        return age.getAge();
     }
 
 }

@@ -15,6 +15,6 @@ public class AddressTest {
         Country country = new Country("India");
         Country otherCountry = new Country("India");
         Address address = new Address(city,state,country);
-        assertTrue(address.isOfCountry(otherCountry));
+        assertTrue(address.isNationality(otherCountry));
     }
 }

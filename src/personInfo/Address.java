@@ -7,7 +7,7 @@ public class Address {
 
     @Override
     public String toString() {
-        return city +  " "+ state +"\n"+ country;
+        return String.format("%s, %s\n%s",city,state,country);
     }
 
     public Address(City city, State state, Country country) {
@@ -16,7 +16,7 @@ public class Address {
         this.country = country;
     }
 
-    public boolean isOfCountry(Country otherCountry) {
+    public boolean isNationality(Country otherCountry) {
         return country.equals(otherCountry);
     }
 }
